@@ -20,8 +20,8 @@ Ideally the device will be remote operable after plugging it in, be it via servi
 ## Instructions:  
 First you need to do a base setup of a raspberry pi zero. I used Raspbian lite but this can be any OS (though Debian based makes it easier to follow along)  
 I connected the Pi to my wifi via raspi-config and ssh'd to the Pi with the default credentials pi/raspberry  
-apt-get install isc-dhcp-server //DHCP server  
-sudo nano /etc/dhcpcd.conf //edit the DHCP server settings  
+`apt-get install isc-dhcp-server` //DHCP server  
+`sudo nano /etc/dhcpcd.conf` //edit the DHCP server settings  
 Put the following code under # Example static IP configuration  
 ```bash
 interface usb0  
@@ -45,8 +45,8 @@ subnet 10.0.0.0  netmask 255.255.255.0 {
 ##  
 ```
   
-systemctl daemon-reload  
-sudo systemctl restart dhcpcd.service  
+`systemctl daemon-reload`  
+`sudo systemctl restart dhcpcd.service`  
   
 You now have a usb ethernet adapter with working DHCP server.  
   
