@@ -22,27 +22,28 @@ First you need to do a base setup of a raspberry pi zero. I used Raspbian lite b
 apt-get install isc-dhcp-server //DHCP server  
 sudo nano /etc/dhcpcd.conf //edit the DHCP server settings  
 Put the following code under # Example static IP configuration  
-`
+```bash
 interface usb0  
 static ip_address=10.0.0.1/24  
-`  
+```
 sudo nano /etc/dhcp/dhcpd.conf  
 Edit the bottom of the file to look like this:  
-`  
-\# Configuration file for DHCP server on Rasberry Pi  
-\#  
+```bash
+# Configuration file for DHCP server on Rasberry Pi  
+#  
 option domain-name "example";  
 option domain-name-servers 8.8.8.8;  
 default-lease-time 3600;  
 max-lease-time 86400;  
   
-\# Configure service for local network 192.168.47.0 (the wireless AP)           $  
+# Configure service for local network 192.168.47.0 (the wireless AP)
 subnet 10.0.0.0  netmask 255.255.255.0 {  
     range 10.0.0.50 10.0.0.250;  
     option routers 10.0.0.1;  
 }  
-\#\#  
-`  
+##  
+```
+  
 systemctl daemon-reload  
 sudo systemctl restart dhcpcd.service  
   
