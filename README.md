@@ -53,5 +53,6 @@ You now have a usb ethernet adapter with working DHCP server.
 ## TODO:  
 Auto ip/pool switcher after each N tries  
 Use same IP as main connection to circumvent fail2ban?  
+Variable port and other cmd options.  
   
 Let me know any ideas or changes you want to see added to the project.  
