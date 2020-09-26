@@ -8,7 +8,7 @@ The pc/server conencts to us and we can remotely attack the server via the Pi.
 ## Long explanation:  
 By attaching the Pi Zero W directly to the server it's possible to directly attack the pc/server without having a presence on the internal network.  
 Paired with a 3g/4g card the results can be sent to the cloud or via internal wifi to a nearby preconfigured access point.  
-Since we're achting as a DHCP server we can decide which IP the server gets, which gets interesting as applications like fail2ban are usually configured to whitelist IP based instead of ethernet interface based.  
+Since we're acting as a DHCP server we can decide which IP the server gets, which gets interesting as applications like fail2ban are usually configured to whitelist IP based instead of ethernet interface based.  
   
 Ideally the device will be remote operable after plugging it in, be it via services like ngrok or other similar services.  
   
@@ -54,5 +54,7 @@ You now have a usb ethernet adapter with working DHCP server.
 Auto ip/pool switcher after each N tries  
 Use same IP as main connection to circumvent fail2ban?  
 Variable port and other cmd options.  
+Automatic start of ssh bruteforce script on boot?
+Reporting to cloud/hosted server over wifi/4g?
   
 Let me know any ideas or changes you want to see added to the project.  
